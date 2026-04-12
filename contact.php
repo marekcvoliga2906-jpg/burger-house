@@ -9,13 +9,13 @@ include __DIR__ . '/partials/header.php';
             <div class="container contact-layout">
                 <div class="page-hero-copy">
                     <span class="eyebrow">Contact</span>
-                    <h1>Come Hungry. Leave Late.</h1>
+                    <h1>Come Hungry. Leave Full.</h1>
                     <p>
                         Walk in for dinner, call ahead for pickup, or message us for group tables. We keep the line
                         moving, but there is always room for one more burger.
                     </p>
                     <div class="button-row">
-                        <a href="tel:+15552348899" class="btn btn-primary">Call +1 555 234 8899</a>
+                        <a href="tel:+421907505050" class="btn btn-primary">Call +421 907 505 050</a>
                         <a href="menu.php" class="btn btn-secondary">View Menu</a>
                     </div>
                 </div>
@@ -38,12 +38,12 @@ include __DIR__ . '/partials/header.php';
                         <div class="contact-card">
                             <span class="eyebrow">Address</span>
                             <h3>Find Us</h3>
-                            <p>128 Grill Street<br>Downtown Food District<br>Bratislava Center</p>
+                            <p>144 Grill Street<br>Downtown Food District<br>Nitra Center</p>
                         </div>
                         <div class="contact-card">
                             <span class="eyebrow">Phone</span>
                             <h3>Reach The Team</h3>
-                            <p>+1 555 234 8899<br>hello@burgerhouse.com</p>
+                            <p>+421 907 505 050<br>burgir@burgerhouse.com</p>
                         </div>
                         <div class="contact-card">
                             <span class="eyebrow">Orders</span>

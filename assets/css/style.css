@@ -258,6 +258,7 @@ textarea {
 .contact-card,
 .hours-card,
 .form-card,
+.card,
 .menu-item,
 .service-card,
 .quote-card {
@@ -494,8 +495,9 @@ section {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
+    align-items: stretch;
 }
 
 .card,
@@ -504,16 +506,26 @@ section {
     border-radius: 30px;
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
 .card.card-feature {
     grid-row: auto;
 }
 
 .card-image {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 11;
 }
 
 .card.card-feature .card-image {
-    aspect-ratio: 4 / 3.9;
+    aspect-ratio: 16 / 11;
+}
+
+.cards .card-image {
+    height: 320px;
+    aspect-ratio: auto;
 }
 
 .card-image img {
@@ -525,6 +537,12 @@ section {
 .card-body,
 .menu-item-body {
     padding: 1.5rem;
+}
+
+.card-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
 }
 
 .card p,
@@ -548,6 +566,12 @@ section {
     margin-top: 1rem;
 }
 
+.card-footer,
+.price-row {
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
 .price-row strong,
 .card-footer strong,
 .menu-item-meta strong {
@@ -566,6 +590,10 @@ section {
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.05em;
+}
+
+.card-note {
+    align-self: flex-start;
 }
 
 .story-grid {

@@ -94,9 +94,9 @@ include __DIR__ . '/partials/header.php';
                             <span class="card-note">Crunch Pick</span>
                             <h3>Double Crunch</h3>
                             <p>Crispy chicken layered with cheddar, tomato, lettuce, and pepper mayo.</p>
-                            <div class="price-row">
+                            <div class="card-footer">
                                 <strong>$10.90</strong>
-                                <span class="chip">Hot Favorite</span>
+                                <a href="menu.php" class="btn btn-secondary">Order It</a>
                             </div>
                         </div>
                     </article>
@@ -109,9 +109,9 @@ include __DIR__ . '/partials/header.php';
                             <span class="card-note">Grill Pick</span>
                             <h3>Grill Master</h3>
                             <p>Sesame bun, grilled beef, fresh tomato, cheese, and seasoned wedges on the side.</p>
-                            <div class="price-row">
+                            <div class="card-footer">
                                 <strong>$9.20</strong>
-                                <span class="chip">Combo Ready</span>
+                                <a href="menu.php" class="btn btn-secondary">Order It</a>
                             </div>
                         </div>
                     </article>
