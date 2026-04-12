@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +40,29 @@
     </header>
 
     <main>
+=======
+<?php
+$pageTitle = 'Burger House | Contact';
+$pageDescription = 'Visit Burger House, book a table, or send a message for pickup, dinner, and group orders.';
+$activePage = 'contact';
+
+$formSent = false;
+$name = '';
+$phone = '';
+$email = '';
+$message = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $formSent = true;
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+}
+
+include __DIR__ . '/partials/header.php';
+?>
+>>>>>>> Stashed changes
         <section class="page-hero">
             <div class="container contact-layout">
                 <div class="page-hero-copy">
@@ -98,23 +122,45 @@
                     <h2>Send A Note</h2>
                     <p class="form-note">Ask about reservations, pickup times, private events, or anything else you need.</p>
 
-                    <form>
+                    <form method="post" action="">
                         <div class="form-grid">
                             <div class="field">
                                 <label for="name">Name</label>
-                                <input id="name" name="name" type="text" placeholder="Your name">
+                                <input
+                                    id="name"
+                                    name="name"
+                                    type="text"
+                                    placeholder="Your name"
+                                    value="<?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?>"
+                                >
                             </div>
                             <div class="field">
                                 <label for="phone">Phone</label>
-                                <input id="phone" name="phone" type="tel" placeholder="Your phone number">
+                                <input
+                                    id="phone"
+                                    name="phone"
+                                    type="tel"
+                                    placeholder="Your phone number"
+                                    value="<?php echo htmlspecialchars($phone, ENT_QUOTES, 'UTF-8'); ?>"
+                                >
                             </div>
                             <div class="field field--full">
                                 <label for="email">Email</label>
-                                <input id="email" name="email" type="email" placeholder="hello@example.com">
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    placeholder="hello@example.com"
+                                    value="<?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?>"
+                                >
                             </div>
                             <div class="field field--full">
                                 <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Tell us what you need"></textarea>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Tell us what you need"
+                                ><?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?></textarea>
                             </div>
                         </div>
 
@@ -123,6 +169,17 @@
                             <a href="index.php" class="btn btn-secondary">Back Home</a>
                         </div>
                     </form>
+
+<?php if ($formSent) { ?>
+                    <div class="contact-card mt-16">
+                        <span class="eyebrow">Your Form Data</span>
+                        <h3>Sent data</h3>
+                        <p><strong>Name:</strong> <?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?></p>
+                        <p><strong>Phone:</strong> <?php echo htmlspecialchars($phone, ENT_QUOTES, 'UTF-8'); ?></p>
+                        <p><strong>Email:</strong> <?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></p>
+                        <p><strong>Message:</strong><br><?php echo nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8')); ?></p>
+                    </div>
+<?php } ?>
                 </div>
             </div>
         </section>
