@@ -59,12 +59,12 @@ include __DIR__ . '/partials/header.php';
                     </div>
                 </div>
 
-                <div class="form-card">
+                <div class="form-card" id="contact-form">
                     <span class="eyebrow">Message Us</span>
                     <h2>Send A Note</h2>
                     <p class="form-note">Ask about reservations, pickup times, private events, or anything else you need.</p>
 
-                    <form method="post" action="">
+                    <form method="post" action="#contact-form">
                         <div class="form-grid">
                             <div class="field">
                                 <label for="name">Name</label>
