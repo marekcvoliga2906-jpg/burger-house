@@ -2,6 +2,7 @@
 $pageTitle = 'Burger House | Contact';
 $pageDescription = 'Visit Burger House, book a table, or send a message for pickup, dinner, and group orders.';
 $activePage = 'contact';
+include __DIR__ . '/formhandler.php';
 include __DIR__ . '/partials/header.php';
 ?>
         <section class="page-hero">
@@ -63,23 +64,45 @@ include __DIR__ . '/partials/header.php';
                     <h2>Send A Note</h2>
                     <p class="form-note">Ask about reservations, pickup times, private events, or anything else you need.</p>
 
-                    <form>
+                    <form method="post" action="">
                         <div class="form-grid">
                             <div class="field">
                                 <label for="name">Name</label>
-                                <input id="name" name="name" type="text" placeholder="Your name">
+                                <input
+                                    id="name"
+                                    name="name"
+                                    type="text"
+                                    placeholder="Your name"
+                                    value="<?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?>"
+                                >
                             </div>
                             <div class="field">
                                 <label for="phone">Phone</label>
-                                <input id="phone" name="phone" type="tel" placeholder="Your phone number">
+                                <input
+                                    id="phone"
+                                    name="phone"
+                                    type="tel"
+                                    placeholder="Your phone number"
+                                    value="<?php echo htmlspecialchars($phone, ENT_QUOTES, 'UTF-8'); ?>"
+                                >
                             </div>
                             <div class="field field--full">
                                 <label for="email">Email</label>
-                                <input id="email" name="email" type="email" placeholder="hello@example.com">
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    placeholder="hello@example.com"
+                                    value="<?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?>"
+                                >
                             </div>
                             <div class="field field--full">
                                 <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Tell us what you need"></textarea>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Tell us what you need"
+                                ><?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?></textarea>
                             </div>
                         </div>
 
@@ -88,6 +111,11 @@ include __DIR__ . '/partials/header.php';
                             <a href="index.php" class="btn btn-secondary">Back Home</a>
                         </div>
                     </form>
+
+<?php
+$renderFormData = true;
+include __DIR__ . '/formhandler.php';
+?>
                 </div>
             </div>
         </section>
