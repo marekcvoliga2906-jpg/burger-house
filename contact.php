@@ -40,7 +40,7 @@
     </header>
 
     <main>
-=======
+
 <?php
 $pageTitle = 'Burger House | Contact';
 $pageDescription = 'Visit Burger House, book a table, or send a message for pickup, dinner, and group orders.';
@@ -169,17 +169,6 @@ include __DIR__ . '/partials/header.php';
                             <a href="index.php" class="btn btn-secondary">Back Home</a>
                         </div>
                     </form>
-
-<?php if ($formSent) { ?>
-                    <div class="contact-card mt-16">
-                        <span class="eyebrow">Your Form Data</span>
-                        <h3>Sent data</h3>
-                        <p><strong>Name:</strong> <?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?></p>
-                        <p><strong>Phone:</strong> <?php echo htmlspecialchars($phone, ENT_QUOTES, 'UTF-8'); ?></p>
-                        <p><strong>Email:</strong> <?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></p>
-                        <p><strong>Message:</strong><br><?php echo nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8')); ?></p>
-                    </div>
-<?php } ?>
                 </div>
             </div>
         </section>
