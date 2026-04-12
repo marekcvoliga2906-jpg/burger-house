@@ -1,68 +1,10 @@
-<<<<<<< Updated upstream
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burger House | Contact</title>
-    <meta name="description" content="Visit Burger House, book a table, or send a message for pickup, dinner, and group orders.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script defer src="assets/js/theme.js"></script>
-</head>
-<body>
-    <header class="site-header">
-        <div class="container nav">
-            <a href="index.php" class="brand" aria-label="Burger House home">
-                <img class="brand-mark" src="assets/images/brand-mark.svg" alt="Burger House logo">
-                <span class="brand-text">
-                    <strong>Burger House</strong>
-                    <span>Flame Crafted</span>
-                </span>
-            </a>
-
-            <nav class="nav-links" aria-label="Main navigation">
-                <a href="index.php">Home</a>
-                <a href="menu.php">Menu</a>
-                <a href="about.php">About</a>
-                <a href="contact.php" class="is-active" aria-current="page">Contact</a>
-            </nav>
-
-            <div class="nav-actions">
-                <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark Theme">
-                    <span data-theme-label>Dark Theme</span>
-                </button>
-                <a class="nav-cta" href="contact.php">Book A Table</a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-
 <?php
 $pageTitle = 'Burger House | Contact';
 $pageDescription = 'Visit Burger House, book a table, or send a message for pickup, dinner, and group orders.';
 $activePage = 'contact';
-
-$formSent = false;
-$name = '';
-$phone = '';
-$email = '';
-$message = '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $formSent = true;
-    $name = $_POST['name'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
-}
-
+include __DIR__ . '/formhandler.php';
 include __DIR__ . '/partials/header.php';
 ?>
->>>>>>> Stashed changes
         <section class="page-hero">
             <div class="container contact-layout">
                 <div class="page-hero-copy">
@@ -169,21 +111,12 @@ include __DIR__ . '/partials/header.php';
                             <a href="index.php" class="btn btn-secondary">Back Home</a>
                         </div>
                     </form>
+
+<?php
+$renderFormData = true;
+include __DIR__ . '/formhandler.php';
+?>
                 </div>
             </div>
         </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-links">
-                <a href="index.php">Home</a>
-                <a href="menu.php">Menu</a>
-                <a href="about.php">About</a>
-                <a href="contact.php">Contact</a>
-            </div>
-            <p>&copy; 2026 Burger House. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+<?php include __DIR__ . '/partials/footer.php'; ?>
