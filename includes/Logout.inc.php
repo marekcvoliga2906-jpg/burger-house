@@ -1,6 +1,5 @@
 <?php
-session_start();
-session_unset();
-session_destroy();
-header("location: ../index.php?error=none");
+require_once __DIR__ . '/Autoloader.inc.php';
+SessionManager::destroy();
+header("location: ../index.php");
 exit();

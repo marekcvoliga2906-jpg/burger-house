@@ -1,14 +1,10 @@
 <?php
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
+require_once __DIR__ . '/includes/SessionBootstrap.inc.php';
 
 if (!isset($_SESSION['userid']) || empty($_SESSION['is_admin'])) {
     header('Location: index.php');
     exit();
 }
-
-require_once __DIR__ . '/includes/Autoloader.inc.php';
 
 $burgerModel = new Burger();
 

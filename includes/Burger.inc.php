@@ -1,7 +1,5 @@
 <?php
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
+require_once __DIR__ . '/SessionBootstrap.inc.php';
 
 if (!isset($_SESSION['userid']) || empty($_SESSION['is_admin'])) {
     header('Location: ../index.php');
@@ -12,8 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ../admin.php');
     exit();
 }
-
-require_once __DIR__ . '/Autoloader.inc.php';
 
 $burger = new BurgerContr();
 

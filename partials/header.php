@@ -2,9 +2,7 @@
 $pageTitle = $pageTitle ?? 'Burger House';
 $pageDescription = $pageDescription ?? 'Burger House';
 $activePage = $activePage ?? '';
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
+require_once __DIR__ . '/../includes/SessionBootstrap.inc.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
