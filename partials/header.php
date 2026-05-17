@@ -46,6 +46,9 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
                 </button>
                 <ul class="menu-member">
                     <?php if (isset($_SESSION["userid"])) { ?>
+                        <?php if (!empty($_SESSION["is_admin"])) { ?>
+                            <li><a href="admin.php">Admin Panel</a></li>
+                        <?php } ?>
                         <li><a href="#"><?php echo htmlspecialchars((string) $_SESSION["useruid"], ENT_QUOTES, 'UTF-8'); ?></a></li>
                         <li><a href="includes/Logout.inc.php" class="header-login-a">Logout</a></li>
                     <?php } else { ?>

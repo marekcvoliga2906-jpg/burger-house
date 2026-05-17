@@ -30,6 +30,7 @@ class Login extends Dbh
         session_start();
         $_SESSION["userid"] = $userData[0]["users_id"];
         $_SESSION["useruid"] = $userData[0]["users_uid"];
+        $_SESSION["is_admin"] = isset($userData[0]["users_email"]) && $userData[0]["users_email"] === "admin@gmail.com";
 
         $stmt = null;
     }
