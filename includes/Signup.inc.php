@@ -6,7 +6,7 @@ if (isset($_POST["submit"])) {
     $email = $_POST["email"];
 
     require_once __DIR__ . '/Autoloader.inc.php';
-    $signup = new Signupcontr($uid, $pwd, $pwdRepeat, $email);
+    $signup = new SignupContr($uid, $pwd, $pwdRepeat, $email);
     $signup->signupUser();
     header("location: ../signup.php?signup=success");
     exit();
