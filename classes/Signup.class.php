@@ -26,7 +26,7 @@ class Signup extends Dbh
         $resultData = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $resultCheck = false;
         if (count($resultData) > 0) {
-            $restulCheck = false;
+            $resultCheck = false;
         } else {
             $resultCheck = true;
         }
