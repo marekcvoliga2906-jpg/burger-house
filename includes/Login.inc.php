@@ -6,6 +6,6 @@ if (isset($_POST["submit"])) {
     require_once __DIR__ . '/Autoloader.inc.php';
     $login = new Logincontr($uid, $pwd);
     $login->loginUser();
-    header("location: ../index.php?error=none");
+    header("location: ../index.php");
     exit();
 }

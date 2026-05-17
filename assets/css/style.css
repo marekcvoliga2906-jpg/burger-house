@@ -184,6 +184,44 @@ textarea {
     gap: 0.75rem;
 }
 
+.menu-member {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.menu-member li {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-member a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 126px;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink);
+    background: var(--surface);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-member a:hover,
+.menu-member a:focus-visible,
+.menu-member .header-login-a {
+    transform: translateY(-2px);
+}
+
 .theme-toggle,
 .nav-cta,
 .btn {
@@ -852,8 +890,13 @@ section {
     }
 
     .theme-toggle,
-    .nav-cta {
+    .nav-cta,
+    .menu-member {
         width: 100%;
+    }
+
+    .menu-member {
+        justify-content: center;
     }
 
     .form-grid {

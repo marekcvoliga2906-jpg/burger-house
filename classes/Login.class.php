@@ -7,7 +7,7 @@ class Login extends Dbh
 
         if (!$stmt->execute(array($login, $login))) {
             $stmt = null;
-            header("location: ../index.php?error=stmtfailed");
+            header("location: ../login.php?error=stmtfailed");
             exit();
         }
 
@@ -15,7 +15,7 @@ class Login extends Dbh
 
         if (count($userData) == 0) {
             $stmt = null;
-            header("location: ../index.php?error=wronglogin");
+            header("location: ../login.php?error=wronglogin");
             exit();
         }
 
@@ -23,7 +23,7 @@ class Login extends Dbh
 
         if ($checkPwd == false) {
             $stmt = null;
-            header("location: ../index.php?error=wrongpassword");
+            header("location: ../login.php?error=wrongpassword");
             exit();
         }
 

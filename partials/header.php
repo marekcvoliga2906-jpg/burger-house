@@ -2,9 +2,13 @@
 $pageTitle = $pageTitle ?? 'Burger House';
 $pageDescription = $pageDescription ?? 'Burger House';
 $activePage = $activePage ?? '';
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +20,7 @@ $activePage = $activePage ?? '';
     <link rel="stylesheet" href="assets/css/style.css">
     <script defer src="assets/js/theme.js"></script>
 </head>
+
 <body>
     <header class="site-header">
         <div class="container nav">
@@ -28,17 +33,26 @@ $activePage = $activePage ?? '';
             </a>
 
             <nav class="nav-links" aria-label="Main navigation">
-                <a href="index.php"<?php echo $activePage === 'home' ? ' class="is-active" aria-current="page"' : ''; ?>>Home</a>
-                <a href="menu.php"<?php echo $activePage === 'menu' ? ' class="is-active" aria-current="page"' : ''; ?>>Menu</a>
-                <a href="about.php"<?php echo $activePage === 'about' ? ' class="is-active" aria-current="page"' : ''; ?>>About</a>
-                <a href="contact.php"<?php echo $activePage === 'contact' ? ' class="is-active" aria-current="page"' : ''; ?>>Contact</a>
+                <a href="index.php" <?php echo $activePage === 'home' ? ' class="is-active" aria-current="page"' : ''; ?>>Home</a>
+                <a href="menu.php" <?php echo $activePage === 'menu' ? ' class="is-active" aria-current="page"' : ''; ?>>Menu</a>
+                <a href="about.php" <?php echo $activePage === 'about' ? ' class="is-active" aria-current="page"' : ''; ?>>About</a>
+                <a href="contact.php" <?php echo $activePage === 'contact' ? ' class="is-active" aria-current="page"' : ''; ?>>Contact</a>
             </nav>
 
             <div class="nav-actions">
+                <a class="nav-cta" href="contact.php">Book A Table</a>
                 <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark Theme">
                     <span data-theme-label>Dark Theme</span>
                 </button>
-                <a class="nav-cta" href="contact.php">Book A Table</a>
+                <ul class="menu-member">
+                    <?php if (isset($_SESSION["userid"])) { ?>
+                        <li><a href="#"><?php echo htmlspecialchars((string) $_SESSION["useruid"], ENT_QUOTES, 'UTF-8'); ?></a></li>
+                        <li><a href="includes/Logout.inc.php" class="header-login-a">Logout</a></li>
+                    <?php } else { ?>
+                        <li><a href="login.php" class="header-login-a">Login</a></li>
+                        <li><a href="signup.php">Sign Up</a></li>
+                    <?php } ?>
+                </ul>
             </div>
         </div>
     </header>
