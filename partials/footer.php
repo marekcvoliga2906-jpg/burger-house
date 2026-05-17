@@ -11,5 +11,6 @@
             <p>&copy; 2026 Burger House. All rights reserved.</p>
         </div>
     </footer>
-</body>
-</html>
+    </body>
+
+    </html>
