@@ -553,6 +553,11 @@ section {
     border-radius: 30px;
 }
 
+.menu-item {
+    display: flex;
+    flex-direction: column;
+}
+
 .card {
     display: flex;
     flex-direction: column;
@@ -592,6 +597,12 @@ section {
     flex-direction: column;
 }
 
+.menu-item-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
 .card p,
 .menu-item p,
 .feature-panel p,
@@ -603,12 +614,16 @@ section {
     margin: 0.7rem 0 0;
 }
 
+.menu-item-body > p {
+    min-height: 5.6rem;
+}
+
 .price-row,
 .card-footer,
 .menu-item-meta {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -619,10 +634,17 @@ section {
     padding-top: 1rem;
 }
 
+.menu-item-meta {
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
 .price-row strong,
 .card-footer strong,
 .menu-item-meta strong {
     font-size: 1.25rem;
+    line-height: 1;
+    margin: 0;
 }
 
 .card-note,
@@ -637,6 +659,7 @@ section {
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.05em;
+    line-height: 1;
 }
 
 .card-note {
@@ -699,7 +722,8 @@ section {
 }
 
 .menu-item-image {
-    aspect-ratio: 16 / 11;
+    height: 360px;
+    aspect-ratio: auto;
 }
 
 .menu-item-image img {
@@ -713,6 +737,8 @@ section {
     gap: 0.5rem;
     flex-wrap: wrap;
     margin-top: 0.9rem;
+    min-height: 3rem;
+    align-content: flex-start;
 }
 
 .service-grid,
@@ -802,6 +828,15 @@ section {
 .field textarea:focus {
     border-color: rgba(196, 75, 36, 0.56);
     box-shadow: 0 0 0 4px rgba(196, 75, 36, 0.12);
+}
+
+.admin-actions {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.admin-inline-form {
+    margin: 0;
 }
 
 .footer-links {

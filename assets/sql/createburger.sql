@@ -1,0 +1,11 @@
+CREATE TABLE burgers (
+        id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(120) NOT NULL,
+        description TEXT NOT NULL,
+        price DECIMAL(10,2) NOT NULL,
+        badge VARCHAR(80) DEFAULT '',
+        tags VARCHAR(255) DEFAULT '',
+        image_path VARCHAR(255) NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    )

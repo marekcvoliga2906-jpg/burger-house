@@ -50,9 +50,9 @@ include __DIR__ . '/partials/header.php';
                             <p>Beef patty, cheddar, crisp lettuce, tomato, pickles, and house burger sauce.</p>
                             <div class="menu-item-meta">
                                 <strong>$8.50</strong>
-                                <span class="chip">Best Seller</span>
                             </div>
                             <div class="menu-item-tags">
+                                <span class="chip">Best Seller</span>
                                 <span>Brioche Bun</span>
                                 <span>House Sauce</span>
                             </div>
@@ -68,9 +68,9 @@ include __DIR__ . '/partials/header.php';
                             <p>Crispy chicken, cheddar, tomato, lettuce, and a smooth pepper mayo finish.</p>
                             <div class="menu-item-meta">
                                 <strong>$10.90</strong>
-                                <span class="chip">Crunch Pick</span>
                             </div>
                             <div class="menu-item-tags">
+                                <span class="chip">Crunch Pick</span>
                                 <span>Crispy</span>
                                 <span>Pepper Mayo</span>
                             </div>
@@ -86,9 +86,9 @@ include __DIR__ . '/partials/header.php';
                             <p>Grilled beef, fresh tomato, sliced cheese, lettuce, and seasoned wedges on the side.</p>
                             <div class="menu-item-meta">
                                 <strong>$9.20</strong>
-                                <span class="chip">Combo Ready</span>
                             </div>
                             <div class="menu-item-tags">
+                                <span class="chip">Combo Ready</span>
                                 <span>Sesame Bun</span>
                                 <span>Potato Wedges</span>
                             </div>
@@ -104,9 +104,9 @@ include __DIR__ . '/partials/header.php';
                             <p>Two patties, cheddar, crispy onion topping, barbecue glaze, and toasted bun.</p>
                             <div class="menu-item-meta">
                                 <strong>$11.40</strong>
-                                <span class="chip">Double Patty</span>
                             </div>
                             <div class="menu-item-tags">
+                                <span class="chip">Double Patty</span>
                                 <span>Smoky</span>
                                 <span>Loaded</span>
                             </div>
@@ -122,9 +122,9 @@ include __DIR__ . '/partials/header.php';
                             <p>Extra cheese, pickles, shredded lettuce, soft toasted bun, and balanced savory bite.</p>
                             <div class="menu-item-meta">
                                 <strong>$8.90</strong>
-                                <span class="chip">Melted</span>
                             </div>
                             <div class="menu-item-tags">
+                                <span class="chip">Melted</span>
                                 <span>Cheddar</span>
                                 <span>Soft Bun</span>
                             </div>
@@ -140,9 +140,9 @@ include __DIR__ . '/partials/header.php';
                             <p>Crunchy fillet, hot glaze, slaw, tomato, and creamy dressing to cool the finish.</p>
                             <div class="menu-item-meta">
                                 <strong>$9.70</strong>
-                                <span class="chip">Spicy</span>
                             </div>
                             <div class="menu-item-tags">
+                                <span class="chip">Spicy</span>
                                 <span>House Slaw</span>
                                 <span>Heat Level 2</span>
                             </div>
