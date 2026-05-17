@@ -3,8 +3,6 @@ class Logincontr extends Login
 {
     private $uid;
     private $pwd;
-    private $pwdRepeat;
-    private $email;
 
     public function __construct($uid, $pwd)
     {
