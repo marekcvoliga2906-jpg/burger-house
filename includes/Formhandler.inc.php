@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../classes/Contact.contr.php';
+require_once __DIR__ . '/Autoloader.inc.php';
 
 $contactController = new ContactController();
 

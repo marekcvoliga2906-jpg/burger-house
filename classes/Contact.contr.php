@@ -1,6 +1,4 @@
 <?php
-require_once 'Contact.model.php';
-require_once 'Contact.Validator.class.php';
 
 class ContactController
 {
