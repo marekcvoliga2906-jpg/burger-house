@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/Autoloader.inc.php';
+require_once __DIR__ . '/SessionBootstrap.inc.php';
 
 $contactController = new ContactController();
 
