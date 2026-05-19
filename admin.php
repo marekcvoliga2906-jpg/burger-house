@@ -25,11 +25,11 @@ include __DIR__ . '/partials/header.php';
         <article class="page-hero-copy">
             <span class="eyebrow">Admin</span>
             <h1>Admin Panel</h1>
-            <p>CRUD pre burgre. Vsetko sa cita a zapisuje do tabulky <strong>burgers</strong>.</p>
+            <p>System for managing your whole menu at one place easy and simple for everyone to use the <strong>menu</strong>.</p>
         </article>
         <article class="form-card">
-            <span class="eyebrow"><?php echo $editBurger ? 'Upravit Burger' : 'Pridat Burger'; ?></span>
-            <h3><?php echo $editBurger ? 'Edit Form' : 'Create Form'; ?></h3>
+            <span class="eyebrow"><?php echo $editBurger ? 'Edit Item' : 'Menu Creator'; ?></span>
+            <h3><?php echo $editBurger ? 'Edit Form' : 'Create An Item'; ?></h3>
 
             <?php if ($error !== '') { ?>
                 <p class="form-note"><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></p>
@@ -43,17 +43,17 @@ include __DIR__ . '/partials/header.php';
                 <input type="hidden" name="id" value="<?php echo $editBurger ? (int) $editBurger['id'] : 0; ?>">
 
                 <div class="field field--full">
-                    <label for="burger-name">Nazov</label>
+                    <label for="burger-name">Name</label>
                     <input id="burger-name" type="text" name="name" required value="<?php echo htmlspecialchars($editBurger['name'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
                 </div>
 
                 <div class="field field--full">
-                    <label for="burger-description">Popis</label>
+                    <label for="burger-description">Description</label>
                     <textarea id="burger-description" name="description" required><?php echo htmlspecialchars($editBurger['description'] ?? '', ENT_QUOTES, 'UTF-8'); ?></textarea>
                 </div>
 
                 <div class="field">
-                    <label for="burger-price">Cena</label>
+                    <label for="burger-price">Price</label>
                     <input id="burger-price" type="text" name="price" required value="<?php echo htmlspecialchars(isset($editBurger['price']) ? (string) $editBurger['price'] : '', ENT_QUOTES, 'UTF-8'); ?>">
                 </div>
 
@@ -63,19 +63,19 @@ include __DIR__ . '/partials/header.php';
                 </div>
 
                 <div class="field field--full">
-                    <label for="burger-tags">Tagy (oddelene ciarkou)</label>
+                    <label for="burger-tags">Tags (comma-separated)</label>
                     <input id="burger-tags" type="text" name="tags" value="<?php echo htmlspecialchars($editBurger['tags'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
                 </div>
 
                 <div class="field field--full">
-                    <label for="burger-image">Cesta k obrazku</label>
+                    <label for="burger-image">Image Path</label>
                     <input id="burger-image" type="text" name="image_path" required placeholder="assets/images/menu-burger-1.jpg" value="<?php echo htmlspecialchars($editBurger['image_path'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
                 </div>
 
                 <div class="field field--full">
-                    <button class="btn btn-primary" type="submit"><?php echo $editBurger ? 'Upravit' : 'Pridat'; ?></button>
+                    <button class="btn btn-primary" type="submit"><?php echo $editBurger ? 'Edit Item' : 'Create Item'; ?></button>
                     <?php if ($editBurger) { ?>
-                        <a class="btn btn-secondary mt-16" href="admin.php">Zrusit edit</a>
+                        <a class="btn btn-secondary mt-16" href="admin.php">Cancel Edit</a>
                     <?php } ?>
                 </div>
             </form>
@@ -90,15 +90,15 @@ include __DIR__ . '/partials/header.php';
                 <span class="eyebrow">House Burgers</span>
                 <h2>Main Lineup</h2>
             </div>
-            <p>Read z databazy. Kazda karta ma akcie Upravit a Zmazat.</p>
+            <p>All employees double check all changes before you add them to the menu.</p>
         </div>
 
         <div class="menu-grid">
             <?php if (count($burgers) === 0) { ?>
                 <article class="menu-item">
                     <div class="menu-item-body">
-                        <h3>Zatial bez burgerov</h3>
-                        <p>Pridaj prvy burger cez formular hore.</p>
+                        <h3>No burgers available yet!</h3>
+                        <p>Our team is working on adding some delicious options for you soon.</p>
                     </div>
                 </article>
             <?php } ?>
@@ -130,11 +130,11 @@ include __DIR__ . '/partials/header.php';
                         <?php } ?>
 
                         <div class="button-row admin-actions">
-                            <a class="btn btn-secondary" href="admin.php?edit=<?php echo (int) $burger['id']; ?>">Upravit</a>
-                            <form method="post" action="includes/Burger.inc.php" class="admin-inline-form" onsubmit="return confirm('Naozaj chces zmazat tento burger?');">
+                            <a class="btn btn-secondary" href="admin.php?edit=<?php echo (int) $burger['id']; ?>">Edit</a>
+                            <form method="post" action="includes/Burger.inc.php" class="admin-inline-form" onsubmit="return confirm('Are you sure you want to delete this burger?');">
                                 <input type="hidden" name="action" value="delete">
                                 <input type="hidden" name="id" value="<?php echo (int) $burger['id']; ?>">
-                                <button class="btn btn-secondary" type="submit">Zmazat</button>
+                                <button class="btn btn-secondary" type="submit">Delete</button>
                             </form>
                         </div>
                     </div>

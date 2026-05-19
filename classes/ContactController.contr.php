@@ -12,9 +12,10 @@ class ContactController
 
     public function handleRequest(): void
     {
-        if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $this->formSent = true;
+        if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+            return;
         }
+
         $this->name = $_POST['name'] ?? '';
         $this->phone = $_POST['phone'] ?? '';
         $this->email = $_POST['email'] ?? '';
@@ -25,7 +26,14 @@ class ContactController
         $this->formError = $validator->validate($contact);
 
         if ($this->formError === "") {
-            $this->formSent = true;
+            try {
+                $contactMessage = new ContactMessage();
+                $contactMessage->create($contact);
+                $this->formSent = true;
+            } catch (Throwable $e) {
+                $this->formError = 'Spravu sa nepodarilo ulozit. Skus to prosim znova.';
+                $this->formSent = false;
+            }
         }
     }
 }

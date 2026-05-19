@@ -121,7 +121,7 @@ include __DIR__ . '/partials/header.php';
             <?php if ($formError !== ''): ?>
 
                 <div class="contact-card mt-16">
-                    <span class="eyebrow">Form Error</span>
+                    <span class="eyebrow">Invalid Input</span>
 
                     <h3>Please fill in all fields</h3>
 
