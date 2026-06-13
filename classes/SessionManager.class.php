@@ -33,7 +33,6 @@ class SessionManager
         self::start();
 
         $_SESSION['user_id'] = $userId;
-        $_SESSION['userid'] = $userId;
         $_SESSION['useruid'] = $userUid;
 
         self::regenerateLoggedIn();
@@ -93,4 +92,3 @@ class SessionManager
         $_SESSION['last_regeneration'] = time();
     }
 }
-

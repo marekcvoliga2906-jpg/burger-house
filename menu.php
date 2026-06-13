@@ -49,8 +49,8 @@ include __DIR__ . '/partials/header.php';
             <?php if (count($burgers) === 0) { ?>
                 <article class="menu-item">
                     <div class="menu-item-body">
-                        <h3>Zatial bez burgerov</h3>
-                        <p>Menu sa automaticky naplni, ked admin prida burgre v admin paneli.</p>
+                        <h3>No burgers available</h3>
+                        <p>Menu will be updated soon by our admin team.</p>
                     </div>
                 </article>
             <?php } ?>
