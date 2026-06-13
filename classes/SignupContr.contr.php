@@ -85,12 +85,6 @@ class SignupContr extends Signup
 
     private function uidNotTakenCheck()
     {
-        $result = false;
-        if (!$this->checkUser($this->uid, $this->email)) {
-            $result = false;
-        } else {
-            $result = true;
-        }
-        return $result;
+        return $this->checkUser($this->uid, $this->email);
     }
 }
